@@ -9,68 +9,11 @@
         <!--Root View Controller-->
         <scene sceneID="ITh-n8-gxp">
             <objects>
-                <tableViewController id="QKy-Qe-7XB" customClass="GeneralNewsTableViewController" customModule="RSSFocusStar" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QKy-Qe-7XB" customClass="FeedViewController" customModule="RSSFocusStar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Xf-hG-Fmw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="tzq-Ud-j1o" customClass="MainCell" customModule="RSSFocusStar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tzq-Ud-j1o" id="AEQ-P2-R3b">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lbj-Zb-Cfs">
-                                            <rect key="frame" x="16" y="8" width="100" height="104"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="mIn-dC-Fcl"/>
-                                                <constraint firstAttribute="height" constant="104" id="rnU-tK-HH6"/>
-                                            </constraints>
-                                        </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7N-0O-zkE">
-                                            <rect key="frame" x="124" y="11" width="219" height="98"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKt-q7-ENv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="219" height="24.5"/>
-                                                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOa-Mg-BOu">
-                                                    <rect key="frame" x="0.0" y="41.5" width="219" height="19"/>
-                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PublishedAt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAH-Zu-ds4">
-                                                    <rect key="frame" x="0.0" y="77.5" width="219" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="F7N-0O-zkE" firstAttribute="bottom" secondItem="AEQ-P2-R3b" secondAttribute="bottomMargin" id="JMT-se-T5h"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="F7N-0O-zkE" secondAttribute="trailing" constant="16" id="JQR-s3-dWt"/>
-                                        <constraint firstItem="F7N-0O-zkE" firstAttribute="leading" secondItem="lbj-Zb-Cfs" secondAttribute="trailing" constant="8" id="ONv-fZ-hYv"/>
-                                        <constraint firstAttribute="bottom" secondItem="lbj-Zb-Cfs" secondAttribute="bottom" constant="8" id="Ogi-hd-2uV"/>
-                                        <constraint firstItem="lbj-Zb-Cfs" firstAttribute="leading" secondItem="AEQ-P2-R3b" secondAttribute="leading" constant="16" id="TY5-XB-Ytu"/>
-                                        <constraint firstItem="lbj-Zb-Cfs" firstAttribute="top" secondItem="AEQ-P2-R3b" secondAttribute="top" constant="8" id="gSJ-wr-to6"/>
-                                        <constraint firstItem="F7N-0O-zkE" firstAttribute="top" secondItem="AEQ-P2-R3b" secondAttribute="topMargin" id="mcK-hq-iVT"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="articleImage" destination="lbj-Zb-Cfs" id="0aj-KD-Osv"/>
-                                    <outlet property="authorLabel" destination="SOa-Mg-BOu" id="bb7-gX-XfZ"/>
-                                    <outlet property="publishedatLabel" destination="SAH-Zu-ds4" id="Lm3-ts-rJv"/>
-                                    <outlet property="titleLabel" destination="aKt-q7-ENv" id="GBR-Bf-H9G"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="QKy-Qe-7XB" id="q4t-LC-uie"/>
                             <outlet property="delegate" destination="QKy-Qe-7XB" id="XKd-MM-Wgn"/>

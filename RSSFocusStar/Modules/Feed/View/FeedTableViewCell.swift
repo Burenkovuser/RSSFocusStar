@@ -8,18 +8,23 @@
 
 import UIKit
 
-class MainCell: UITableViewCell {
+class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var publishedatLabel: UILabel!
 
-    func configur (with article: Article) {
+     func configur (with article: Article) {
         
         titleLabel.text = article.title
-        authorLabel.text = article.author
-        publishedatLabel.text = article.publishedAt
+       authorLabel.text = article.author
+       publishedatLabel.text = article.publishedAt
+        
+        
+       
+        
+   
         
         /*
         DispatchQueue.main.async {

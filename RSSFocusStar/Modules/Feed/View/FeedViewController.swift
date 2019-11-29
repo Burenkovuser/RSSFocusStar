@@ -8,19 +8,30 @@
 
 import UIKit
 
-class GeneralNewsTableViewController: UITableViewController {
+class FeedViewController: UITableViewController, IFeedView {
+    func setupInitialState() {
+         title = "News"
+        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: identifier)
+        tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: identifier) // сделать ячейку
+    }
     
-    private let identifier = "cell"
+    private let presenter = FeedPresenter()
+    var selectedIndexPath = IndexPath()
+    
+    
+    private let identifier = "FeedTableViewCell"
     
     // app trancport security
     
-    private let urlNews = "https://newsapi.org/v2/everything?q=ru&publishedAt&apiKey=d746eb4b4bf04ac69851a310dc59a178"
+    private let urlNews = "https://newsapi.org/v2/everything?q=ru&publishedAt&apiKey=22ef75460b784f7ba10564e713a039df"
     
     var artiles: [Article] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        setupInitialState()
+        self.presenter.inject(view: self)
+        //fetchData()
 
     }
 
@@ -31,24 +42,34 @@ class GeneralNewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artiles.count
+        //return artiles.count
+        return presenter.numberOfRowsInSection(section: section)
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MainCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as! FeedTableViewCell
+        let item = presenter.itemForRowAtIndexPath(indexPath: indexPath)
+        cell.configur(with: item)
+        
+        return cell
+        
+        /*let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! FeedTableViewCell
         let article = artiles[indexPath.row]
         cell.configur(with: article)
 
         return cell
+ */
     }
     
+    /*
     func fetchData() {
         guard let url = URL(string: urlNews) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            if let error = error {// если ошибка выходим из метода
+            if let error = error {
                 print(error.localizedDescription)
                 return
             }
@@ -70,6 +91,7 @@ class GeneralNewsTableViewController: UITableViewController {
                 }
             }.resume()
     }
+ */
 
     /*
     // Override to support conditional editing of the table view.
@@ -118,8 +140,4 @@ class GeneralNewsTableViewController: UITableViewController {
 
 }
 
-extension GeneralNewsTableViewController: IGeneralViewController {
-    func setupInitialState() {
-        title = "NEWS"
-    }
-}
+
