@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FeedViewController: UITableViewController, IFeedView {
     
     private let identifier = "FeedTableViewCell"
     private let presenter = FeedPresenter()
     private var selectedIndexPath = IndexPath()
+    private let placeHolderImage = UIImage(named: "placeholder.png")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,46 +44,31 @@ class FeedViewController: UITableViewController, IFeedView {
         return presenter.numberOfRowsInSection(section: section)
     }
 
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as! FeedTableViewCell
         let item = presenter.itemForRowAtIndexPath(indexPath: indexPath)
+        
+        
+        let url: URL? = {
+            if let string = item.urlToImage {
+                return URL(string: string)
+            } else {
+                return nil
+            }
+        }()
+        
+        cell.articleImage?.sd_setImage(
+            with: url,
+            placeholderImage: placeHolderImage)
+ 
+
         cell.configur(with: item)
         
         return cell
     }
-    
-    
-    /*
-    func fetchData() {
-        guard let url = URL(string: urlNews) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            if let response = response {
-                print(response)
-            }
-            
-            guard let data = data else { return }
-            
-                do {
-                    self.artiles = try JSONDecoder().decode(RSSresponce.self, from: data).articles
-                    DispatchQueue.main.async {
-                      self.tableView.reloadData()
-                   }
-                    print(self.artiles)
-                    
-                } catch let ereor {
-                    print(ereor.localizedDescription)
-                }
-            }.resume()
-    }
- */
 
     /*
     // Override to support conditional editing of the table view.

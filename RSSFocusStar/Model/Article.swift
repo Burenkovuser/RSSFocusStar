@@ -18,7 +18,6 @@ struct Article: Decodable {
     let publishedAt: String?
 }
 
-
 struct Sourse: Decodable {
     let id: String?
     let name: String?
