@@ -21,11 +21,6 @@ class FeedTableViewCell: UITableViewCell {
        authorLabel.text = article.author
        publishedatLabel.text = article.publishedAt
         
-        
-       
-        
-   
-        
         /*
         DispatchQueue.main.async {
             self.titleLabel.text = article.title

@@ -9,32 +9,29 @@
 import UIKit
 
 class FeedViewController: UITableViewController, IFeedView {
-    func setupInitialState() {
-         title = "News"
-        tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: identifier)
-        tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: identifier) // сделать ячейку
-    }
-    
-    private let presenter = FeedPresenter()
-    var selectedIndexPath = IndexPath()
-    
     
     private let identifier = "FeedTableViewCell"
-    
-    // app trancport security
-    
-    private let urlNews = "https://newsapi.org/v2/everything?q=ru&publishedAt&apiKey=22ef75460b784f7ba10564e713a039df"
-    
-    var artiles: [Article] = []
+    private let presenter = FeedPresenter()
+    private var selectedIndexPath = IndexPath()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialState()
         self.presenter.inject(view: self)
-        //fetchData()
-
+        
+        self.presenter.fetchData { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
+    
+    
+    func setupInitialState() {
+           title = "News"
+          tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: identifier)
+          tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: identifier) // сделать ячейку
+      }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,7 +39,6 @@ class FeedViewController: UITableViewController, IFeedView {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return artiles.count
         return presenter.numberOfRowsInSection(section: section)
     }
 
@@ -54,14 +50,8 @@ class FeedViewController: UITableViewController, IFeedView {
         cell.configur(with: item)
         
         return cell
-        
-        /*let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! FeedTableViewCell
-        let article = artiles[indexPath.row]
-        cell.configur(with: article)
-
-        return cell
- */
     }
+    
     
     /*
     func fetchData() {
