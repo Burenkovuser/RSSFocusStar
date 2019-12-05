@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		FB683AAE238431D200ED81B6 /* RSSresponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB683AAD238431D200ED81B6 /* RSSresponce.swift */; };
 		FB87C629238B774B00FEECFD /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87C628238B774B00FEECFD /* NetworkingManager.swift */; };
 		FB87C62B238B77B700FEECFD /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87C62A238B77B700FEECFD /* SessionConfiguration.swift */; };
+		FBCB5CB62392417100224380 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB5CB52392417100224380 /* ArticleViewController.swift */; };
+		FBCB5CB82392420300224380 /* IArticlePresetner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB5CB72392420300224380 /* IArticlePresetner.swift */; };
+		FBCB5CBA2392421200224380 /* ArticlePresetner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB5CB92392421200224380 /* ArticlePresetner.swift */; };
+		FBCB5CBC2392502C00224380 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB5CBB2392502C00224380 /* WebViewController.swift */; };
 		FBF86488237FD02F00A2C46D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF86487237FD02F00A2C46D /* AppDelegate.swift */; };
 		FBF8648A237FD02F00A2C46D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF86489237FD02F00A2C46D /* SceneDelegate.swift */; };
 		FBF8648F237FD02F00A2C46D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBF8648D237FD02F00A2C46D /* Main.storyboard */; };
@@ -39,6 +43,10 @@
 		FB683AAD238431D200ED81B6 /* RSSresponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSresponce.swift; sourceTree = "<group>"; };
 		FB87C628238B774B00FEECFD /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		FB87C62A238B77B700FEECFD /* SessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfiguration.swift; sourceTree = "<group>"; };
+		FBCB5CB52392417100224380 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		FBCB5CB72392420300224380 /* IArticlePresetner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IArticlePresetner.swift; sourceTree = "<group>"; };
+		FBCB5CB92392421200224380 /* ArticlePresetner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePresetner.swift; sourceTree = "<group>"; };
+		FBCB5CBB2392502C00224380 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		FBF86484237FD02F00A2C46D /* RSSFocusStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSFocusStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF86487237FD02F00A2C46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBF86489237FD02F00A2C46D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +74,6 @@
 				5175D6E690E444B8FE304234 /* Pods-RSSFocusStar.debug.xcconfig */,
 				B183D1A0A6C75A1E5B890942 /* Pods-RSSFocusStar.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,6 +117,8 @@
 				FB073EBA238FFC340095D255 /* FeedViewController.swift */,
 				FB0EA2D3238183F00039AB72 /* FeedTableViewCell.swift */,
 				FB073EC5238FFFF10095D255 /* FeedTableViewCell.xib */,
+				FBCB5CB52392417100224380 /* ArticleViewController.swift */,
+				FBCB5CBB2392502C00224380 /* WebViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +128,8 @@
 			children = (
 				FB073EBC238FFC350095D255 /* IFeedPresenter.swift */,
 				FB073EBD238FFC350095D255 /* FeedPresenter.swift */,
+				FBCB5CB72392420300224380 /* IArticlePresetner.swift */,
+				FBCB5CB92392421200224380 /* ArticlePresetner.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -292,15 +303,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB073EC0238FFC350095D255 /* FeedPresenter.swift in Sources */,
+				FBCB5CBA2392421200224380 /* ArticlePresetner.swift in Sources */,
+				FBCB5CB62392417100224380 /* ArticleViewController.swift in Sources */,
 				FBF86488237FD02F00A2C46D /* AppDelegate.swift in Sources */,
 				FB073EBE238FFC350095D255 /* FeedViewController.swift in Sources */,
 				FB683AAE238431D200ED81B6 /* RSSresponce.swift in Sources */,
 				FB073EC2238FFC780095D255 /* IFeedView.swift in Sources */,
 				FBF8648A237FD02F00A2C46D /* SceneDelegate.swift in Sources */,
+				FBCB5CB82392420300224380 /* IArticlePresetner.swift in Sources */,
 				FB073EBF238FFC350095D255 /* IFeedPresenter.swift in Sources */,
 				FB87C629238B774B00FEECFD /* NetworkingManager.swift in Sources */,
 				FB0EA2D4238183F00039AB72 /* FeedTableViewCell.swift in Sources */,
 				FB0EA2CA238119BE0039AB72 /* Article.swift in Sources */,
+				FBCB5CBC2392502C00224380 /* WebViewController.swift in Sources */,
 				FB87C62B238B77B700FEECFD /* SessionConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

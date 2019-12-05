@@ -70,6 +70,22 @@ class FeedViewController: UITableViewController, IFeedView {
         return cell
     }
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+        self.performSegue(withIdentifier: "openCell", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue , sender: Any?) {
+        if segue.identifier == "openCell" {
+            let vc = segue.destination as! ArticleViewController
+            
+            let item = presenter.itemForRowAtIndexPath(indexPath:selectedIndexPath)
+            vc.presenter.set(article:item)
+            
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
