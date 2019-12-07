@@ -38,17 +38,6 @@ class ArticleViewController: UIViewController {
              let vc = segue.destination as! WebViewController
            
            vc.url = article?.url
-           
-           /*
-             guard let url = article?.url else {
-                 return
-             }
-           let request = URLRequest(url: URL(string: url)!)
-             vc.articleWeb.load(request)
-             vc.articleWeb.addObserver(self,
-                                     forKeyPath: #keyPath(WKWebView.isLoading),
-                                     options: .new,
-                                     context: nil) */
          }
     }
     

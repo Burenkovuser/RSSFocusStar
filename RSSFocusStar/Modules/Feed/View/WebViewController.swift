@@ -23,17 +23,28 @@ class WebViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
         guard let url = url else { return }
         let request = URLRequest(url: URL(string: url)!)
         self.articleWeb.load(request)
         
-        if articleWeb.isLoading {
-                              activity.startAnimating()
-                              activity.isHidden = false
-                    } else {
-                              activity.stopAnimating()
-                              activity.isHidden = true
+        self.articleWeb.addObserver(self, forKeyPath: #keyPath(WKWebView.isLoading), options: .new, context: nil)
+        
+       
         }
+        
+    override func observeValue(forKeyPath keyPath: String?, of: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+            
+            if keyPath == "loading" {
+                
+                if articleWeb.isLoading {
+                                             self.activity.startAnimating()
+                                             self.activity.isHidden = false
+                                   } else {
+                                             activity.stopAnimating()
+                                             activity.isHidden = true
+            }
+        }
+        
     }
 }
