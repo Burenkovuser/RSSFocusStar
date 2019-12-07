@@ -40,7 +40,6 @@ class ArticleViewController: UIViewController {
            vc.url = article?.url
          }
     }
-    
 }
 
 extension ArticleViewController: IArticleView {
@@ -61,4 +60,5 @@ extension ArticleViewController: IArticleView {
         
         detailImage.sd_setImage(with: url,  placeholderImage: placeHolderImage)
     }
+    
 }

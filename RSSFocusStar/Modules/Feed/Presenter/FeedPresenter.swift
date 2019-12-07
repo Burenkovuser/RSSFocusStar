@@ -35,15 +35,13 @@ class FeedPresenter: IFeedPresenter {
                     DispatchQueue.main.async {
                       completed()
                    }
-                    print(self.artiсles)
+                    //print(self.artiсles)
                     
                 } catch let ereor {
                     print(ereor.localizedDescription)
                 }
             }.resume()
     }
-
-    
 
     func numberOfRowsInSection(section: Int) -> Int {
         return artiсles.count

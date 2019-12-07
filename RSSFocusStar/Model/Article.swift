@@ -16,6 +16,17 @@ struct Article: Decodable {
     let url: String?
     let urlToImage: String?
     let publishedAt: String?
+    
+    var published: Date? {
+        guard let string = self.publishedAt else { return nil }
+        return type(of: self).formatter.date(from: string)
+    }
+    
+    private static let formatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return result
+    }()
 }
 
 struct Sourse: Decodable {

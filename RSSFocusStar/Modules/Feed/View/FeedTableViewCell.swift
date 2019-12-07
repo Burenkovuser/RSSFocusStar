@@ -16,9 +16,20 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var publishedatLabel: UILabel!
 
      func configur (with article: Article) {
-        
         titleLabel.text = article.title
         authorLabel.text = article.author
-        publishedatLabel.text = article.publishedAt
+        
+        if let date = article.published {
+            publishedatLabel.text = type(of: self).formatter.string(from: date)
+        }
+        else {
+            publishedatLabel.text = nil
+        }
     }
+    
+    private static let formatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateFormat = "dd-MM-yyyy"
+        return result
+    }()
 }
