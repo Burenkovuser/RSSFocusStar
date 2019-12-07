@@ -48,7 +48,7 @@ extension ArticleViewController: IArticleView {
         detailTitleLabel.text = article.title
         detailTextView.text = article.description
         detailAuthorLabel.text = article.author
-        detailDateLabel.text = article.publishedAt
+        //detailDateLabel.text = article.publishedAt
         
         let url: URL? = {
             if let string = article.urlToImage {
