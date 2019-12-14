@@ -9,13 +9,13 @@
 import UIKit
 import WebKit
 
-class ArticleViewController: UIViewController {
+final class ArticleViewController: UIViewController {
 
-    @IBOutlet weak var detailImage: UIImageView!
-    @IBOutlet weak var detailTitleLabel: UILabel!
-    @IBOutlet weak var detailTextView: UITextView!
-    @IBOutlet weak var detailAuthorLabel: UILabel!
-    @IBOutlet weak var detailDateLabel: UILabel!
+    @IBOutlet private weak var detailImage: UIImageView!
+    @IBOutlet private weak var detailTitleLabel: UILabel!
+    @IBOutlet private weak var detailTextView: UITextView!
+    @IBOutlet private weak var detailAuthorLabel: UILabel!
+    @IBOutlet private weak var detailDateLabel: UILabel!
     
     var article: Article?
     
@@ -52,11 +52,11 @@ extension ArticleViewController: IArticleView {
         
         let url: URL? = {
             if let string = article.urlToImage {
-                       return URL(string: string)
-                   } else {
-                       return nil
-                   }
-               }()
+                return URL(string: string)
+            } else {
+                return nil
+            }
+        }()
         
         detailImage.sd_setImage(with: url,  placeholderImage: placeHolderImage)
     }

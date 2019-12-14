@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FeedPresenter: IFeedPresenter {
+final class FeedPresenter: IFeedPresenter {
     
     private weak var view: IFeedView?
     private let urlNews = "https://newsapi.org/v2/everything?q=ru&publishedAt&apiKey=22ef75460b784f7ba10564e713a039df"

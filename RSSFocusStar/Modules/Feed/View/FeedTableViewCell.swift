@@ -11,9 +11,9 @@ import UIKit
 class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var articleImage: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var publishedatLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var authorLabel: UILabel!
+    @IBOutlet private weak var publishedatLabel: UILabel!
 
      func configur (with article: Article) {
         titleLabel.text = article.title

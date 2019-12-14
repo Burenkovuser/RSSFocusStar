@@ -8,9 +8,9 @@
 
 import Foundation
 
-class ArticlePresenter: IArticlePresetner {
+final class ArticlePresenter: IArticlePresetner {
     
-   private weak var view: IArticleView?
+    private weak var view: IArticleView?
     private var article: Article!
     func inject(view: IArticleView){
         self.view = view
