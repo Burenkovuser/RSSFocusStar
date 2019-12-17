@@ -11,10 +11,16 @@ import Foundation
 final class FeedPresenter: IFeedPresenter {
     
     private weak var view: IFeedView?
+    
+    
     private let urlNews = "https://newsapi.org/v2/everything?q=ru&publishedAt&apiKey=22ef75460b784f7ba10564e713a039df"
     
     private var artiсles: [Article] = []
+    //let networkingManager = NetworkManage()
+    //networkingManager.fetchData()
     
+    
+    //была использована mvp архитектура, соблюдены принципы ооп и их сказать, использовались паттерны проектирования..., какие сторонние библиотеки использованы,
     func fetchData(completed: @escaping ()->Void) {
         guard let url = URL(string: urlNews) else { return }
         
@@ -42,6 +48,7 @@ final class FeedPresenter: IFeedPresenter {
                 }
             }.resume()
     }
+ 
 
     func numberOfRowsInSection(section: Int) -> Int {
         return artiсles.count

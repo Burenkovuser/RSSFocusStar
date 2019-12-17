@@ -50,6 +50,13 @@ extension ArticleViewController: IArticleView {
         detailAuthorLabel.text = article.author
         //detailDateLabel.text = article.publishedAt
         
+        if let date = article.published {
+                   detailDateLabel.text = type(of: self).formatter.string(from: date)
+               }
+               else {
+                   detailDateLabel.text = nil
+               }
+        
         let url: URL? = {
             if let string = article.urlToImage {
                 return URL(string: string)
@@ -61,4 +68,9 @@ extension ArticleViewController: IArticleView {
         detailImage.sd_setImage(with: url,  placeholderImage: placeHolderImage)
     }
     
+    private static let formatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateFormat = "dd-MM-yyyy-HH:mm:ss"
+        return result
+    }()
 }

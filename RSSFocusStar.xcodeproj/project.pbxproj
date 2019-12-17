@@ -16,7 +16,6 @@
 		FB0EA2CA238119BE0039AB72 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0EA2C9238119BE0039AB72 /* Article.swift */; };
 		FB0EA2D4238183F00039AB72 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0EA2D3238183F00039AB72 /* FeedTableViewCell.swift */; };
 		FB683AAE238431D200ED81B6 /* RSSresponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB683AAD238431D200ED81B6 /* RSSresponce.swift */; };
-		FB79D45923A4A6FA000F0D8C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB79D45823A4A6FA000F0D8C /* NetworkManager.swift */; };
 		FB87C629238B774B00FEECFD /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87C628238B774B00FEECFD /* NetworkingManager.swift */; };
 		FB87C62B238B77B700FEECFD /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB87C62A238B77B700FEECFD /* SessionConfiguration.swift */; };
 		FBCB5CB62392417100224380 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCB5CB52392417100224380 /* ArticleViewController.swift */; };
@@ -42,7 +41,6 @@
 		FB0EA2C9238119BE0039AB72 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		FB0EA2D3238183F00039AB72 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		FB683AAD238431D200ED81B6 /* RSSresponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSresponce.swift; sourceTree = "<group>"; };
-		FB79D45823A4A6FA000F0D8C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FB87C628238B774B00FEECFD /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		FB87C62A238B77B700FEECFD /* SessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfiguration.swift; sourceTree = "<group>"; };
 		FBCB5CB52392417100224380 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				FB073EBC238FFC350095D255 /* IFeedPresenter.swift */,
 				FB073EBD238FFC350095D255 /* FeedPresenter.swift */,
 				FBCB5CB72392420300224380 /* IArticlePresetner.swift */,
-				FB79D45823A4A6FA000F0D8C /* NetworkManager.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -317,7 +314,6 @@
 				FBCB5CBA2392421200224380 /* ArticlePresetner.swift in Sources */,
 				FBCB5CB62392417100224380 /* ArticleViewController.swift in Sources */,
 				FBF86488237FD02F00A2C46D /* AppDelegate.swift in Sources */,
-				FB79D45923A4A6FA000F0D8C /* NetworkManager.swift in Sources */,
 				FB073EBE238FFC350095D255 /* FeedViewController.swift in Sources */,
 				FB683AAE238431D200ED81B6 /* RSSresponce.swift in Sources */,
 				FB073EC2238FFC780095D255 /* IFeedView.swift in Sources */,

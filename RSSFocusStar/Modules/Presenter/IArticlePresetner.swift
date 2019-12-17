@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IArticlePresetner {
+protocol IArticlePresetner: AnyObject {
     func inject(view: IArticleView)
     func set(article:Article)
     func onViewReadyEvent()

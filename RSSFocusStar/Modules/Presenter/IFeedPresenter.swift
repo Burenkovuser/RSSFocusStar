@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol IFeedPresenter {
+protocol IFeedPresenter: AnyObject {
     
     func inject(view: IFeedView)
     func onViewReadyEvent()
     
-    func fetchData(completed: @escaping ()->Void)
+    //func fetchData(completed: @escaping ()->Void)
     
     func numberOfRowsInSection(section: Int) -> Int
     func itemForRowAtIndexPath(indexPath: IndexPath) -> Article
